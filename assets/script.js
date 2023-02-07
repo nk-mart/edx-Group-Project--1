@@ -1,6 +1,4 @@
 
-
-
 // Proof of Concept 
 
 // key
@@ -13,12 +11,13 @@ var flight_iata ='AA6'
 var Flight_Api_URL = `https://airlabs.co/api/v9/flight?flight_iata=${flight_iata}&api_key=${api_key}`
 
 
+
 let flightbtn = document.querySelector(".flightbtn")
 
 let cardcontainer = document.querySelector(".carddiv")
 
 
-// F
+// Flight API Search 
 function FlightDataSearch(){
 fetch("sampledata.txt")
 
@@ -58,6 +57,36 @@ card.innerHTML = `
 
 
 
+ flightbtn.addEventListener("click", FlightDataSearch)
 
 
-flightbtn.addEventListener("click", FlightDataSearch)
+
+
+
+
+
+// FETCH MOVIE TRENDING 
+ fetch("https://api.themoviedb.org/3/trending/movie/day?api_key=c1d91b870e49691263e4f7d72633542c")
+
+ .then(response =>response.json())
+ .then(moviedataRandom => {
+        console.log(moviedataRandom)
+         let movieID =  moviedataRandom.results[7].id
+        console.log(movieID)
+
+        //fETCh MOVIE GET MOVIE END POINT VIA ID 
+       return fetch(`https://api.themoviedb.org/3/movie/${movieID}?api_key=c1d91b870e49691263e4f7d72633542c&language=en-US`)
+         
+ })
+
+        .then(response =>response.json())
+        .then(movieByID => {
+        console.log(movieByID)
+        console.log(movieByID.runtime)
+
+
+     })
+     {}
+
+ 
+    
