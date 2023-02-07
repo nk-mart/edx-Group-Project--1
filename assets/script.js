@@ -20,7 +20,31 @@ fetch("sampledata.txt")
 .then(response =>response.json())
 .then(flightData => {
     console.log(flightData)
+
+
+    //Parse Flight Info Data
+
+let FlightNumber = flightData.request.params.flight_iata
+let departTime = flightData.response.deptime
+let arrivalTime = flightData.response.arr_time
+let flightTime = flightData.response.duration
+
+
+console.log(flightTime)
+
+let card = document.querySelector('.card-body')
+
+card.innerHTML = `
+<p>Flight Number: ${FlightNumber}</p>
+<p> Flight Depart Time: ${departTime}</p>
+<p>Flight Arrival Time ${arrivalTime}</p>
+<p>Flight Lenght ${flightTime} mins </p>
+
+`
+
 })
+
+
 
 }
 
