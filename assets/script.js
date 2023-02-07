@@ -13,7 +13,12 @@ var flight_iata ='AA6'
 var Flight_Api_URL = `https://airlabs.co/api/v9/flight?flight_iata=${flight_iata}&api_key=${api_key}`
 
 
+let flightbtn = document.querySelector(".flightbtn")
 
+let cardcontainer = document.querySelector(".carddiv")
+
+
+// F
 function FlightDataSearch(){
 fetch("sampledata.txt")
 
@@ -34,19 +39,25 @@ console.log(flightTime)
 
 let card = document.querySelector('.card-body')
 
+// togle card info 
+cardcontainer.classList.toggle("d-none")
+
+
+console.log(cardcontainer.classList)
+
 card.innerHTML = `
 <p>Flight Number: ${FlightNumber}</p>
 <p> Flight Depart Time: ${departTime}</p>
-<p>Flight Arrival Time ${arrivalTime}</p>
-<p>Flight Lenght ${flightTime} mins </p>
-
+<p>Flight Arrival Time: ${arrivalTime}</p>
+<p>Flight Length: ${flightTime} mins </p>
 `
 
 })
 
-
-
 }
 
 
-FlightDataSearch()
+
+
+
+flightbtn.addEventListener("click", FlightDataSearch)
