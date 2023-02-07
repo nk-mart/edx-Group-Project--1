@@ -12,11 +12,19 @@ The Web-Page will includes a description of its functionality and expected to be
 ## Instructions
 
 1.We will construct a rigid criteria as well as user story to meet the expected functionality of the website. 
-1. Once we have come up with project idea we will be creating a new GitHub repo called “edx-Group-Project--1”
+2. Once we have come up with project idea we will be creating a new GitHub repo called “edx-Group-Project--1”
 and clone it on the GitHub repository
-2. We will then be creating an index.html, script.js, and style.css
+
+
+## Technology being used for the project
+HTML
+CSS (Bootstrap)
+JavaScript
+
+
+
    
-3.Our data will largely depend on the APIs data collected and with our collaborative coding technique, we will create a user friendly function and a response which will enable the acquired data to function as expected by writing a JavaScript code that would analyzes and reformat the API data collected.
+4.Our data will largely depend on the APIs data collected and with our collaborative coding technique, we will create a user friendly function and a response which will enable the acquired data to function as expected by writing a JavaScript code that would analyzes and reformat the API data collected.
 
 ## Collected data should function as follow;
 * Enable user to select a flight journey.

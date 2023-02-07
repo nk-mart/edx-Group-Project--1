@@ -1,8 +1,6 @@
 let movieAPIKey = 'c1d91b870e49691263e4f7d72633542c'
 let flightAPIKey = 'ebc56f4c-51a8-465c-a38e-e7a9e06ee070'
-let departure = document.querySelectorAll('.dep_icao');
-let arrival = document.querySelector('.arr_icao');
-let flightStatus = document.querySelector('.status');
+
 
 const flightDropdown = $("#flight-selection");
 const flightName = $("#flight-name");
