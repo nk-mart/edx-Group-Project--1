@@ -1,3 +1,4 @@
+
 h1 {
     color: red;
 }
@@ -5,3 +6,16 @@ h1 {
 body {
     color: #fff;
 }    
+=======
+
+
+h1{
+    color: #630000;
+}
+
+
+body{
+    background: linear-gradient(to right, #434343, rgba(0, 0, 0, 1));
+    background: linear-gradient(to right, #434343, rgba(0, 0, 0, 1));
+  
+  }
