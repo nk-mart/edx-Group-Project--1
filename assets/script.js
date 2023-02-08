@@ -2,19 +2,22 @@
 // Proof of Concept 
 
 // key
-var api_key ='8143e65c-7c54-4b44-9179-9454f8ba3d2e'
+const api_key ='8143e65c-7c54-4b44-9179-9454f8ba3d2e'
 
 // Search Parameter for flight
-var flight_iata ='AA6'
+let flight_iata ='AA6'
 
 // Flight API Fetch URL
-var Flight_Api_URL = `https://airlabs.co/api/v9/flight?flight_iata=${flight_iata}&api_key=${api_key}`
+let Flight_Api_URL = `https://airlabs.co/api/v9/flight?flight_iata=${flight_iata}&api_key=${api_key}`
 
 
 
 let flightbtn = document.querySelector(".flightbtn")
 
 let cardcontainer = document.querySelector(".carddiv")
+
+let Poster1 = document.querySelector(".movieTestimg1")
+
 
 
 // Flight API Search 
@@ -83,7 +86,11 @@ card.innerHTML = `
         .then(movieByID => {
         console.log(movieByID)
         console.log(movieByID.runtime)
+        console.log(movieByID.poster_path)
+        let path  = movieByID.poster_path
+        Poster1.src = `https://www.themoviedb.org/t/p/w600_and_h900_bestv2${path}`
 
+        console.log(Poster1.src)
 
      })
      {}
