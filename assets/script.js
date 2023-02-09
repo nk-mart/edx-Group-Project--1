@@ -72,7 +72,7 @@ card.innerHTML = `
 
 
 
-// FETCH MOVIE TRENDING 
+// API CALL to FETCH TRENDING  Movie of they day
  fetch("https://api.themoviedb.org/3/trending/movie/day?api_key=c1d91b870e49691263e4f7d72633542c")
 
  .then(response =>response.json())
@@ -89,7 +89,7 @@ card.innerHTML = `
          Poster2.src = `https://image.tmdb.org/t/p/original${src2}`
          Poster3.src = `https://image.tmdb.org/t/p/original${src3}`
  
-            console.log (src1)
+        
 
 
             let movieID =  moviedataRandom.results[3].id
