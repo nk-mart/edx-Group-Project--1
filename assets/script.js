@@ -22,6 +22,15 @@ let Poster1 = document.querySelector(".movieTestimg1")
 let Poster2 = document.querySelector(".movieTestimg2")
 let Poster3= document.querySelector(".movieTestimg3")
 
+// Random Number Generator 
+var radmonNum = [];
+while(radmonNum.length < 3){
+    var r = Math.floor(Math.random() * 19) + 1;
+    if(radmonNum.indexOf(r) === -1) radmonNum.push(r);
+}
+
+
+
 
 
 // Flight API Search 
@@ -80,9 +89,9 @@ card.innerHTML = `
         console.log(moviedataRandom)
 
         // Parse Poster Path
-         let src1 = moviedataRandom.results[Math.floor(Math.random() * 20)].poster_path
-         let src2 = moviedataRandom.results[Math.floor(Math.random() * 20)].poster_path
-         let src3 = moviedataRandom.results[Math.floor(Math.random() * 20)].poster_path
+         let src1 = moviedataRandom.results[radmonNum[0]].poster_path
+         let src2 = moviedataRandom.results[radmonNum[1]].poster_path
+         let src3 = moviedataRandom.results[radmonNum[2]].poster_path
         
          //Sets Poster src
          Poster1.src = `https://image.tmdb.org/t/p/original${src1}`
@@ -90,6 +99,8 @@ card.innerHTML = `
          Poster3.src = `https://image.tmdb.org/t/p/original${src3}`
  
         
+      
+
 //store movie id an array 
 
             let movieID =  moviedataRandom.results[3].id
@@ -112,8 +123,6 @@ card.innerHTML = `
        // let path  = movieByID.poster_path
         //Poster1.src = `https://image.tmdb.org/t/p/original/${path}`
         
-
-        //console.log(Poster1.src)
 
      })
      {}
