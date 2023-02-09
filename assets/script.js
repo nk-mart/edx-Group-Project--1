@@ -90,19 +90,23 @@ card.innerHTML = `
          Poster3.src = `https://image.tmdb.org/t/p/original${src3}`
  
         
-
+//store movie id an array 
 
             let movieID =  moviedataRandom.results[3].id
      
 
         //fETCh MOVIE GET MOVIE END POINT VIA ID 
+        array.forEach(element => {
+            
+        });
+        // for each loop in movie
        return fetch(`https://api.themoviedb.org/3/movie/${movieID}?api_key=c1d91b870e49691263e4f7d72633542c&language=en-US`)
          
  })
 
-        .then(response =>response.json())
+        .then(response =>response.json())       //retunred array of movie info 
         .then(movieByID => {
-        console.log(movieByID)
+        console.log(movieByID)            //dyna display reponse 
         console.log(movieByID.runtime)
         console.log(movieByID.poster_path)
        // let path  = movieByID.poster_path

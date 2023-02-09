@@ -17,7 +17,7 @@ body{
 .posterimg {
     object-fit: contain;
     object-position: center;
-    height: 100vh;
+    height: 70vh;
     overflow: hidden;
     width:100%;
 }
