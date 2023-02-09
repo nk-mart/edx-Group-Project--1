@@ -79,18 +79,21 @@ card.innerHTML = `
  .then(moviedataRandom => {
         console.log(moviedataRandom)
 
-         let movieID =  moviedataRandom.results[3].id
-         let src1 = moviedataRandom.results[19].poster_path
+        // Parse Poster Path
+         let src1 = moviedataRandom.results[10].poster_path
          let src2 = moviedataRandom.results[5].poster_path
          let src3 = moviedataRandom.results[6].poster_path
-
+        
+         //Sets Poster src
+         Poster1.src = `https://image.tmdb.org/t/p/original${src1}`
+         Poster2.src = `https://image.tmdb.org/t/p/original${src2}`
+         Poster3.src = `https://image.tmdb.org/t/p/original${src3}`
+ 
             console.log (src1)
 
-        Poster1.src = `https://image.tmdb.org/t/p/original${src1}`
-       
-        Poster2.src = `https://image.tmdb.org/t/p/original${src2}`
-        Poster3.src = `https://image.tmdb.org/t/p/original${src3}`
 
+            let movieID =  moviedataRandom.results[3].id
+     
 
         //fETCh MOVIE GET MOVIE END POINT VIA ID 
        return fetch(`https://api.themoviedb.org/3/movie/${movieID}?api_key=c1d91b870e49691263e4f7d72633542c&language=en-US`)
