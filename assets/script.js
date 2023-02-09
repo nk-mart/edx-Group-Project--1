@@ -74,7 +74,7 @@ card.innerHTML = `
  .then(response =>response.json())
  .then(moviedataRandom => {
         console.log(moviedataRandom)
-         let movieID =  moviedataRandom.results[7].id
+         let movieID =  moviedataRandom.results[2].id
         console.log(movieID)
 
         //fETCh MOVIE GET MOVIE END POINT VIA ID 
@@ -88,7 +88,7 @@ card.innerHTML = `
         console.log(movieByID.runtime)
         console.log(movieByID.poster_path)
         let path  = movieByID.poster_path
-        Poster1.src = `https://www.themoviedb.org/t/p/w600_and_h900_bestv2${path}`
+        Poster1.src = `https://image.tmdb.org/t/p/original/${path}`
 
         console.log(Poster1.src)
 

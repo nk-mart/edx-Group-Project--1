@@ -12,3 +12,13 @@ body{
 }
 
 
+
+
+.posterimg {
+    object-fit: contain;
+    object-position: center;
+    height: 100vh;
+    overflow: hidden;
+    width:100%;
+}
+
