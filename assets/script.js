@@ -80,9 +80,9 @@ card.innerHTML = `
         console.log(moviedataRandom)
 
         // Parse Poster Path
-         let src1 = moviedataRandom.results[10].poster_path
-         let src2 = moviedataRandom.results[5].poster_path
-         let src3 = moviedataRandom.results[6].poster_path
+         let src1 = moviedataRandom.results[Math.floor(Math.random() * 20)].poster_path
+         let src2 = moviedataRandom.results[Math.floor(Math.random() * 20)].poster_path
+         let src3 = moviedataRandom.results[Math.floor(Math.random() * 20)].poster_path
         
          //Sets Poster src
          Poster1.src = `https://image.tmdb.org/t/p/original${src1}`
