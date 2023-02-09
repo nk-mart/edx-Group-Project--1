@@ -16,7 +16,11 @@ let flightbtn = document.querySelector(".flightbtn")
 
 let cardcontainer = document.querySelector(".carddiv")
 
+
+ // Movie Poster image
 let Poster1 = document.querySelector(".movieTestimg1")
+let Poster2 = document.querySelector(".movieTestimg2")
+let Poster3= document.querySelector(".movieTestimg3")
 
 
 
@@ -74,8 +78,19 @@ card.innerHTML = `
  .then(response =>response.json())
  .then(moviedataRandom => {
         console.log(moviedataRandom)
-         let movieID =  moviedataRandom.results[2].id
-        console.log(movieID)
+
+         let movieID =  moviedataRandom.results[3].id
+         let src1 = moviedataRandom.results[19].poster_path
+         let src2 = moviedataRandom.results[5].poster_path
+         let src3 = moviedataRandom.results[6].poster_path
+
+            console.log (src1)
+
+        Poster1.src = `https://image.tmdb.org/t/p/original${src1}`
+       
+        Poster2.src = `https://image.tmdb.org/t/p/original${src2}`
+        Poster3.src = `https://image.tmdb.org/t/p/original${src3}`
+
 
         //fETCh MOVIE GET MOVIE END POINT VIA ID 
        return fetch(`https://api.themoviedb.org/3/movie/${movieID}?api_key=c1d91b870e49691263e4f7d72633542c&language=en-US`)
@@ -87,10 +102,11 @@ card.innerHTML = `
         console.log(movieByID)
         console.log(movieByID.runtime)
         console.log(movieByID.poster_path)
-        let path  = movieByID.poster_path
-        Poster1.src = `https://image.tmdb.org/t/p/original/${path}`
+       // let path  = movieByID.poster_path
+        //Poster1.src = `https://image.tmdb.org/t/p/original/${path}`
+        
 
-        console.log(Poster1.src)
+        //console.log(Poster1.src)
 
      })
      {}

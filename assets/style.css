@@ -13,7 +13,7 @@ body{
 
 
 
-
+/* Style to adjust poster image */
 .posterimg {
     object-fit: contain;
     object-position: center;
