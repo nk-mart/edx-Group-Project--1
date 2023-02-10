@@ -11,7 +11,6 @@ let flight_iata ='AA6'
 let Flight_Api_URL = `https://airlabs.co/api/v9/flight?flight_iata=${flight_iata}&api_key=${api_key}`
 
 
-
 let flightbtn = document.querySelector(".flightbtn")
 
 let cardcontainer = document.querySelector(".carddiv")
@@ -92,7 +91,16 @@ card.innerHTML = `
          let src1 = moviedataRandom.results[radmonNum[0]].poster_path
          let src2 = moviedataRandom.results[radmonNum[1]].poster_path
          let src3 = moviedataRandom.results[radmonNum[2]].poster_path
-        
+
+         IdArray= []
+
+         radmonNum.forEach(element => {
+            // console.log(moviedataRandom.results[element].id)
+            IdArray.push(moviedataRandom.results[element].id)
+         });
+
+         console.log(IdArray)
+ 
          //Sets Poster src
          Poster1.src = `https://image.tmdb.org/t/p/original${src1}`
          Poster2.src = `https://image.tmdb.org/t/p/original${src2}`
@@ -103,29 +111,36 @@ card.innerHTML = `
 
 //store movie id an array 
 
-            let movieID =  moviedataRandom.results[3].id
+           // return let movieID =  moviedataRandom.results[3].id
      
 
         //fETCh MOVIE GET MOVIE END POINT VIA ID 
-        array.forEach(element => {
+        IdArray.forEach(element => {
+            fetch (`https://api.themoviedb.org/3/movie/${element}?api_key=c1d91b870e49691263e4f7d72633542c&language=en-US`)
+            
+            .then(res => res.json())
+            .then(movieinfo => {
+                console.log( `MovieRunTime: ${movieinfo.runtime}`)            //dyna display reponse 
+                console.log(movieinfo)
+            })
             
         });
         // for each loop in movie
-       return fetch(`https://api.themoviedb.org/3/movie/${movieID}?api_key=c1d91b870e49691263e4f7d72633542c&language=en-US`)
+      // return fetch(`https://api.themoviedb.org/3/movie/${movieID}?api_key=c1d91b870e49691263e4f7d72633542c&language=en-US`)
          
  })
 
-        .then(response =>response.json())       //retunred array of movie info 
-        .then(movieByID => {
-        console.log(movieByID)            //dyna display reponse 
-        console.log(movieByID.runtime)
-        console.log(movieByID.poster_path)
-       // let path  = movieByID.poster_path
-        //Poster1.src = `https://image.tmdb.org/t/p/original/${path}`
+    //     .then(response =>response.json())       //retunred array of movie info 
+    //     .then(movieByID => {
+    //     console.log(movieByID)            //dyna display reponse 
+    //     console.log(movieByID.runtime)
+    //     console.log(movieByID.poster_path)
+    //    // let path  = movieByID.poster_path
+    //     //Poster1.src = `https://image.tmdb.org/t/p/original/${path}`
         
 
-     })
-     {}
+     //})
+     
 
  
     
