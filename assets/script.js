@@ -11,6 +11,7 @@ let flight_iata ='AA6'
 let Flight_Api_URL = `https://airlabs.co/api/v9/flight?flight_iata=${flight_iata}&api_key=${api_key}`
 
 
+let flightSearchText = document.querySelector(".flightSearchText")
 let flightbtn = document.querySelector(".flightbtn")
 
 let cardcontainer = document.querySelector(".carddiv")
@@ -72,7 +73,9 @@ card.innerHTML = `
 
 
 
- flightbtn.addEventListener("click", FlightDataSearch)
+ flightbtn.addEventListener("click",function(){
+        console.log(flightSearchText.value)
+ } )
 
 
 
