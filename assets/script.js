@@ -38,7 +38,7 @@ fetch("sampledata.txt")
 
 .then(response =>response.json())
 .then(flightData => {
-    console.log(flightData)
+    //console.log(flightData)
 
 
     //Parse Flight Info Data
@@ -49,7 +49,7 @@ let arrivalTime = flightData.response.arr_time
 let flightTime = flightData.response.duration
 
 
-console.log(flightTime)
+//console.log(flightTime)
 
 let card = document.querySelector('.card-body')
 
@@ -57,7 +57,7 @@ let card = document.querySelector('.card-body')
 cardcontainer.classList.toggle("d-none")
 
 
-console.log(cardcontainer.classList)
+//console.log(cardcontainer.classList)
 
 card.innerHTML = `
 <p>Flight Number: ${FlightNumber}</p>
@@ -111,7 +111,7 @@ card.innerHTML = `
 
 //store movie id an array 
 
-           // return let movieID =  moviedataRandom.results[3].id
+        
      
 
         //fETCh MOVIE GET MOVIE END POINT VIA ID 
@@ -120,7 +120,12 @@ card.innerHTML = `
             
             .then(res => res.json())
             .then(movieinfo => {
-                console.log( `MovieRunTime: ${movieinfo.runtime}`)            //dyna display reponse 
+                console.log( `
+                Movie Title: ${movieinfo.original_title}
+
+                Movie RunTime: ${movieinfo.runtime}
+
+                Move Overview: ${movieinfo.overview}`)            //dyna display reponse 
                 console.log(movieinfo)
             })
             
