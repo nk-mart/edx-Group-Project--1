@@ -74,7 +74,7 @@ card.innerHTML = `
 
 
  flightbtn.addEventListener("click",function(){
-        console.log(flightSearchText.value)
+        console.log(flightSearchText.value.replaceAll(" ",""))
  } )
 
 
@@ -84,7 +84,7 @@ card.innerHTML = `
 
 
 // API CALL to FETCH TRENDING  Movie of they day
- fetch("https://api.themoviedb.org/3/trending/movie/day?api_key=c1d91b870e49691263e4f7d72633542c")
+fetch("https://api.themoviedb.org/3/trending/movie/day?api_key=c1d91b870e49691263e4f7d72633542c")
 
  .then(response =>response.json())
  .then(moviedataRandom => {
@@ -119,7 +119,7 @@ card.innerHTML = `
 
         //fETCh MOVIE GET MOVIE END POINT VIA ID 
         IdArray.forEach(element => {
-            fetch (`https://api.themoviedb.org/3/movie/${element}?api_key=c1d91b870e49691263e4f7d72633542c&language=en-US`)
+        fetch (`https://api.themoviedb.org/3/movie/${element}?api_key=c1d91b870e49691263e4f7d72633542c&language=en-US`)
             
             .then(res => res.json())
             .then(movieinfo => {
