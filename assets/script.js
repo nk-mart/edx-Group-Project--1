@@ -1,10 +1,10 @@
 
 // Proof of Concept 
 
-// key
+// Flight API KEY
 const api_key ='8143e65c-7c54-4b44-9179-9454f8ba3d2e'
 
-// Search Parameter for flight
+// Search Parameter for flight Testing
 let flight_iata ='AI126'
 
 // Flight API Fetch URL
@@ -22,7 +22,7 @@ let Poster1 = document.querySelector(".movieTestimg1")
 let Poster2 = document.querySelector(".movieTestimg2")
 let Poster3= document.querySelector(".movieTestimg3")
 
-// Random Number Generator 
+// Random Number Generator
 var radmonNum = [];
 while(radmonNum.length < 3){
     var r = Math.floor(Math.random() * 19) + 1;
@@ -54,11 +54,7 @@ fetch(`https://airlabs.co/api/v9/flight?flight_iata=${fligthNumber}&api_key=8143
 //console.log(flightTime)
         let card = document.querySelector('.card-body')
 
-// togle card info 
-    //cardcontainer.classList.toggle("d-none")
 
-
-//console.log(cardcontainer.classList)
 
         card.innerHTML = `
 <p>Flight Number: ${FlightNumber}</p>
@@ -77,7 +73,7 @@ fetch(`https://airlabs.co/api/v9/flight?flight_iata=${fligthNumber}&api_key=8143
 
 
 
- / API CALL to FETCH TRENDING  Movie of they day
+ // API CALL to FETCH TRENDING  Movie of they day
  fetch("https://api.themoviedb.org/3/trending/movie/day?api_key=  c1d91b870e49691263e4f7d72633542c")
  
   .then(response =>response.json())
