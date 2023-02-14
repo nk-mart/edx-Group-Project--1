@@ -17,8 +17,20 @@ body{
 .posterimg {
     object-fit: contain;
     object-position: center;
-    height: 100vh;
+    height: 70vh;
     overflow: hidden;
     width:100%;
 }
 
+
+/* .carousel-control-prev {
+        position: relative;
+        left: 22%;
+    
+}
+
+.carousel-control-next{
+    position: relative;
+    right: 22%;
+
+} */
