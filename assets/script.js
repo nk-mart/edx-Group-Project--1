@@ -14,7 +14,7 @@ let Flight_Api_URL = `https://airlabs.co/api/v9/flight?flight_iata=${flight_iata
 let flightSearchText = document.querySelector(".flightSearchText")
 let flightbtn = document.querySelector(".flightbtn")
 
-let cardcontainer = document.querySelector(".carddiv")
+let flightInfo = document.querySelector(".flightInfo")
 
 
  // Movie Poster image
@@ -38,7 +38,7 @@ function FlightDataSearch(){
     
 let fligthNumber = flightSearchText.value.replaceAll(" ", "")
 
-fetch(`https://airlabs.co/api/v9/flight?flight_iata=${fligthNumber}&api_key=8143e65c-7c54-4b44-9179-9454f8ba3d2e`)
+fetch("sampledata.txt")
     .then(response => response.json())
     .then(flightData => {
     console.log(flightData)
@@ -55,14 +55,17 @@ fetch(`https://airlabs.co/api/v9/flight?flight_iata=${fligthNumber}&api_key=8143
         let card = document.querySelector('.card-body')
 
 
+        flightInfo.innerHTML = `
 
-        card.innerHTML = `
+<div class="card w-25">
+<div class="card-body">
 <p>Flight Number: ${FlightNumber}</p>
 <p> Flight Depart Time: ${departTime}</p>
 <p>Flight Arrival Time: ${arrivalTime}</p>
 <p>Flight Length: ${flightTime} mins </p>
+</div>
+</div>
 `
-
 })
 
 }
